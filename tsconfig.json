@@ -8,7 +8,11 @@
     "strict": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "extends": "astro/tsconfigs/strict",
   "include": [

@@ -1,12 +1,12 @@
 import { defineConfig } from "astro/config";
-import path from "path";
 import vue from "@astrojs/vue";
+import { fileURLToPath, URL } from "node:url";
 
 export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        "@": path.resolve("./src")
+        "@": fileURLToPath(new URL("./src", import.meta.url))
       }
     }
   },
