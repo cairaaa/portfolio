@@ -1,3 +1,14 @@
+---
+import LanguageButton from "../ui/LanguageButton.astro";
+import javascriptLogo from "@/assets/images/javascript-logo.png";
+import typescriptLogo from "@/assets/images/typescript-logo.png";
+import htmlLogo from "@/assets/images/html-logo.png";
+import cssLogo from "@/assets/images/css-logo.png";
+import scssLogo from "@/assets/images/scss-logo.png";
+import pythonLogo from "@/assets/images/python-logo.png";
+import javaLogo from "@/assets/images/java-logo.png";
+---
+
 <div id="about">
   <div>
     <h2>About</h2>
@@ -5,10 +16,51 @@
   </div>
   <div>
     <h3>Languages</h3>
+    <div class="language-buttons">
+      <LanguageButton 
+        title="Typescript" 
+        logo={typescriptLogo} 
+        link="https://www.typescriptlang.org/" 
+      />
+      <LanguageButton 
+        title="Javascript" 
+        logo={javascriptLogo} 
+        link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/" 
+      />
+      <LanguageButton 
+        title="Python" 
+        logo={pythonLogo} 
+        link="https://www.python.org/" 
+      />
+      <LanguageButton 
+        title="HTML" 
+        logo={htmlLogo} 
+        link="https://developer.mozilla.org/en-US/docs/Web/HTML/"
+      />
+      <LanguageButton 
+        title="CSS" 
+        logo={cssLogo} 
+        link="https://developer.mozilla.org/en-US/docs/Web/CSS/"
+      />
+      <LanguageButton 
+        title="SCSS" 
+        logo={scssLogo} 
+        link="https://sass-lang.com/"
+      />
+      <LanguageButton 
+        title="Java" 
+        logo={javaLogo} 
+        link="https://www.java.com/"
+      />
+    <div>
   </div>
 </div>
 
 <style lang="scss">
+  h2, h3 {
+    margin-bottom: 1rem;
+  }
+
   #about {
     display: flex;
     // change the width later
@@ -19,8 +71,11 @@
       flex: 1;
     }
   }
-
-  h2 {
-    margin-bottom: 1rem;
+  
+  .language-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
   }
 </style>
