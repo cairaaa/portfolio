@@ -1,8 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import { execSync } from "child_process";
 
-const gitDate = execSync("git log -1 --format=%cd --date=short").toString().trim();
+const gitDate = execSync("git log -1 --format=%cI --date=short").toString().trim();
 const lastUpdated = new Date(gitDate).toLocaleDateString("en-US", {
   year: "numeric",
   month: "long",
