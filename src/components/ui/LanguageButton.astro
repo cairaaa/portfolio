@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 const { title, logo, link } = Astro.props;
 ---
 
-<a href={link} target="_blank" rel="noopener noreferrer" class="language-button">
+<a href={link} target="_blank" rel="noopener noreferrer" class="language-button border">
   <Image src={logo} alt="logo"/>
   <p>{title}</p>
 </a>
@@ -20,13 +20,11 @@ const { title, logo, link } = Astro.props;
     color: inherit;
   }
 
-  // add more styling later
   .language-button {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 1rem;
-    border: 2px solid black;
-    border-radius: 2rem;
+    border-radius: 32px;
   }
 </style>

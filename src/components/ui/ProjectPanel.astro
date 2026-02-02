@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 const { title, image } = Astro.props;
 ---
 
-<div class="project-panel">
+<div class="project-panel border">
   <Image src={image} alt="project showcase" />
   <div class="info">
     <p class="project-title">{title}</p>
@@ -20,14 +20,14 @@ const { title, image } = Astro.props;
     height: auto;
     flex-shrink: 0;
   }
+
   .project-panel {
     min-width: 80%;
     display: flex;
     gap: 2rem;
     padding: 2rem;
-    border: 2px solid rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 8px $border-colour;
+    border-radius: 8px;
     
     .info {
       flex: 1;

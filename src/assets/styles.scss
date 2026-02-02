@@ -41,3 +41,9 @@ h3 {
 h2, h3 {
   margin-bottom: 1rem;
 }
+
+.border {
+  border: 2px solid $border-colour;
+  box-shadow: 2px 2px 4px $border-colour;
+  border-radius: 4px;
+}
