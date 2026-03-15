@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 const { title, image } = Astro.props;
 ---
 
-<div class="project-panel border">
+<div class="project-panel border fade-wrapper">
   <Image src={image} alt="project showcase" />
   <div class="info">
     <p class="project-title">{title}</p>
