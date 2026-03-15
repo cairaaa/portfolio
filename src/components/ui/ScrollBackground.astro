@@ -1,0 +1,95 @@
+---
+
+---
+
+<script>
+  interface ColourStop {
+    position: number;
+    red: number;
+    green: number;
+    blue: number;
+  }
+
+  const stops: ColourStop[] = [
+    { position: 0,   red: 255, green: 218, blue: 228 },
+    { position: 0.5, red: 255, green: 218, blue: 218 },
+    { position: 1,   red: 255, green: 228, blue: 218 } 
+  ];
+
+  function lerp(a: number, b: number, t: number): number {
+    return Math.round(a + (b - a) * t);
+  }
+
+  function getColourAtProgress(
+    p: number
+  ): { red: number; green: number; blue: number } {
+    const progress = Math.max(0, Math.min(1, p));
+
+    let lower = stops[0];
+    let upper = stops[stops.length - 1];
+
+    for (let i = 0; i < stops.length - 1; i++) {
+      if (progress >= stops[i].position && progress <= stops[i + 1].position) {
+        lower = stops[i];
+        upper = stops[i + 1];
+        break;
+      }
+    }
+
+    const range = upper.position - lower.position;
+    const time = range === 0 ? 0 : (progress - lower.position) / range;
+
+    return {
+      red: lerp(lower.red, upper.red, time),
+      green: lerp(lower.green, upper.green, time),
+      blue: lerp(lower.blue, upper.blue, time)
+    };
+  }
+
+  const background = document.getElementById("scroll-bg") as HTMLElement;
+  let scrollTimer: ReturnType<typeof setTimeout>;
+  let lastProgress = -1;
+
+  function updateBackground(): void {
+    const scrollTop = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const progress = maxScroll > 0 ? scrollTop / maxScroll : 0;
+
+    if (Math.abs(progress - lastProgress) < 0.001) {
+      return;
+    }
+
+    lastProgress = progress;
+
+    const { red, green, blue } = getColourAtProgress(progress);
+    background.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+  }
+
+  background.style.transition = "none";
+  updateBackground();
+
+  window.addEventListener(
+    "scroll", (): void => {
+      background.style.transition = "background-color 0.08s ease-out";
+
+      updateBackground();
+
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout((): void => {
+        background.style.transition = "none";
+      }, 150);
+    },
+    { passive: true }
+  );
+</script>
+
+<div id="scroll-bg">
+  <slot />
+</div>
+
+<style>
+  #scroll-bg {
+    transition: background-color 0.08s ease-out;
+  }
+</style>
+
