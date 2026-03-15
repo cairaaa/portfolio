@@ -1,5 +1,6 @@
 ---
 import "@/assets/styles.scss";
+import ScrollBackground from "../components/ui/ScrollBackground.astro";
 ---
 
 <!doctype html>
@@ -18,8 +19,13 @@ import "@/assets/styles.scss";
 		<title>Mindy Situ | Portfolio</title>
 	</head>
 	<body>
-		<main>
-			<slot />
-		</main>
+		<ScrollBackground>
+			<main>
+					<slot />
+			</main>
+		</ScrollBackground>
+		<script>
+			import "../scripts/animation.ts";
+		</script>
 	</body>
 </html>
