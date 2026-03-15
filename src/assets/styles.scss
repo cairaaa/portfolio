@@ -11,9 +11,7 @@ html {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  background-color: mistyrose;
+  min-height: 100vh;
 }
 
 main {
@@ -46,4 +44,20 @@ h2, h3 {
   border: 2px solid $border-colour;
   box-shadow: 2px 2px 4px $border-colour;
   border-radius: 4px;
+}
+
+.fade-wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  &.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
