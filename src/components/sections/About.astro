@@ -7,6 +7,14 @@ import cssLogo from "@/assets/images/css-logo.png";
 import scssLogo from "@/assets/images/scss-logo.png";
 import pythonLogo from "@/assets/images/python-logo.png";
 import javaLogo from "@/assets/images/java-logo.png";
+import discordjsLogo from "@/assets/images/discord-js-logo.png";
+import discordpyLogo from "@/assets/images/discord-py-logo.png";
+import vueLogo from "@/assets/images/vue-logo.png";
+import astroLogo from "@/assets/images/astro-logo.png";
+import expressLogo from "@/assets/images/express-logo.png";
+import electronLogo from "@/assets/images/electron-logo.png";
+import fastifyLogo from "@/assets/images/fastify-logo.png";
+import mongodbLogo from "@/assets/images/mongodb-logo.png";
 ---
 
 <div id="about">
@@ -21,45 +29,92 @@ import javaLogo from "@/assets/images/java-logo.png";
       sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
   </div>
-  <div>
-    <h3>Languages</h3>
-    <div class="language-buttons">
-      <LanguageButton 
-        title="Typescript" 
-        logo={typescriptLogo} 
-        link="https://www.typescriptlang.org/" 
-      />
-      <LanguageButton 
-        title="Javascript" 
-        logo={javascriptLogo} 
-        link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/" 
-      />
-      <LanguageButton 
-        title="Python" 
-        logo={pythonLogo} 
-        link="https://www.python.org/" 
-      />
-      <LanguageButton 
-        title="HTML" 
-        logo={htmlLogo} 
-        link="https://developer.mozilla.org/en-US/docs/Web/HTML/"
-      />
-      <LanguageButton 
-        title="CSS" 
-        logo={cssLogo} 
-        link="https://developer.mozilla.org/en-US/docs/Web/CSS/"
-      />
-      <LanguageButton 
-        title="SCSS" 
-        logo={scssLogo} 
-        link="https://sass-lang.com/"
-      />
-      <LanguageButton 
-        title="Java" 
-        logo={javaLogo} 
-        link="https://www.java.com/"
-      />
-    <div>
+  <div class="technologies">
+    <div class="languages">
+      <h3>Languages</h3>
+      <div class="technologies-buttons">
+        <LanguageButton 
+          title="Typescript" 
+          logo={typescriptLogo} 
+          link="https://www.typescriptlang.org/" 
+        />
+        <LanguageButton 
+          title="Javascript" 
+          logo={javascriptLogo} 
+          link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/" 
+        />
+        <LanguageButton 
+          title="Python" 
+          logo={pythonLogo} 
+          link="https://www.python.org/" 
+        />
+        <LanguageButton 
+          title="HTML" 
+          logo={htmlLogo} 
+          link="https://developer.mozilla.org/en-US/docs/Web/HTML/"
+        />
+        <LanguageButton 
+          title="CSS" 
+          logo={cssLogo} 
+          link="https://developer.mozilla.org/en-US/docs/Web/CSS/"
+        />
+        <LanguageButton 
+          title="SCSS" 
+          logo={scssLogo} 
+          link="https://sass-lang.com/"
+        />
+        <LanguageButton 
+          title="Java" 
+          logo={javaLogo} 
+          link="https://www.java.com/"
+        />
+      </div>
+    </div>
+    <div class="frameworks">
+      <h3>Frameworks<span class="slash">/</span>technologies</h3>
+      <div class="technologies-buttons">
+        <LanguageButton
+          title="Discordjs"
+          logo={discordjsLogo}
+          link="https://discord.js.org/"
+        />
+        <LanguageButton
+          title="Discordpy"
+          logo={discordpyLogo}
+          link="https://discordpy.readthedocs.io/en/stable/"
+        />
+        <LanguageButton
+          title="Vue"
+          logo={vueLogo}
+          link="https://vuejs.org/"
+        />
+        <LanguageButton
+          title="Astro"
+          logo={astroLogo}
+          link="https://astro.build/"
+        />
+        <LanguageButton
+          title="Express"
+          logo={expressLogo}
+          link="https://expressjs.com/"
+        />
+        <LanguageButton
+          title="Electron"
+          logo={electronLogo}
+          link="https://www.electronjs.org/"
+        />
+        <LanguageButton
+          title="MongoDB"
+          logo={mongodbLogo}
+          link="https://www.mongodb.com"
+        />
+        <LanguageButton
+          title="Fastify"
+          logo={fastifyLogo}
+          link="https://fastify.dev/"
+        />
+      </div>
+    </div>
   </div>
 </div>
 
@@ -77,11 +132,21 @@ import javaLogo from "@/assets/images/java-logo.png";
   .about-description > p {
     padding: 2rem;
   }
+
+  .technologies {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
   
-  .language-buttons {
+  .technologies-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     justify-content: center;
+  }
+
+  .slash {
+    margin: 0 0.25rem;
   }
 </style>
