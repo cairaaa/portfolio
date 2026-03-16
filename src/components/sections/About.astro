@@ -18,16 +18,30 @@ import mongodbLogo from "@/assets/images/mongodb-logo.png";
 ---
 
 <div id="about">
-  <div class="about-description">
+  <div class="about-description-box">
     <h2>About</h2>
-    <p class="border fade-wrapper">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-      sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <div class="about-description border fade-wrapper">
+      <p>
+        Hi, I'm Mindy Situ, and I am currently a high school student. 
+        I am a full stack developer, primarily focused on backend development. 
+        I also code a lot of small projects in a variety of languages, just for fun :)
+      </p>
+      <p>
+        I have experience coding with a range of languages, and 
+        I mainly code in TypeScript currently. 
+        I've also learnt many languages relating to web development. 
+        I also code in Python for code that is not related to web development, 
+        such as competitive programming.
+      </p>
+      <p>
+        As well, I also have experience in many other technologies, such as frameworks, 
+        libraries, and development tools. 
+        I have used a couple of different frontend frameworks, 
+        and Express/Fastify for the backend of websites. 
+        I am also proficient in working with databases, 
+        creating Discord bots, and deploying websites. 
+      </p>
+    </div>
   </div>
   <div class="technologies">
     <div class="languages">
@@ -129,8 +143,12 @@ import mongodbLogo from "@/assets/images/mongodb-logo.png";
     }
   }
 
-  .about-description > p {
+  .about-description {
     padding: 2rem;
+
+    > p {
+      margin: 0.5rem 0;
+    }
   }
 
   .technologies {
