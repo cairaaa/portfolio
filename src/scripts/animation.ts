@@ -7,14 +7,11 @@ wrappers.forEach((element: HTMLElement) => {
         if (entry.isIntersecting) {
           element.classList.add("visible");
           element.classList.remove("hidden");
-        } else {
-          element.classList.remove("visible");
-          element.classList.add("hidden");
+          observer.unobserve(element);
         }
       });
     },
     { threshold: 0.1 }
   );
-
   observer.observe(element);
 });
