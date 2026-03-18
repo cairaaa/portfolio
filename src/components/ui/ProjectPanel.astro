@@ -16,7 +16,7 @@ const { title, image } = Astro.props;
 
 <style lang="scss">
   img {
-    width: 24rem;
+    width: 50%;
     height: auto;
     object-fit: contain;
     flex-shrink: 0;
@@ -39,6 +39,12 @@ const { title, image } = Astro.props;
         font-weight: 700;
         margin-bottom: 0.5rem;
       }
+    }
+  }
+
+  @media (min-width: 1281px) {
+    img {
+      width: 40%;
     }
   }
 </style>
