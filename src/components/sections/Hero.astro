@@ -1,4 +1,13 @@
 <div id="hero">
+  <div class="hero-border">
+    <div class="hero-top"></div>
+    <div class="hero-left">
+      <img src="/artwork/border-left.png" alt="" />
+    </div>
+    <div class="hero-right">
+      <img src="/artwork/border-right.png" alt="" />
+    </div>
+  </div>
   <h1>Hello, I'm Mindy Situ</h1>
   <h2>I am a full stack web developer</h2>
   <a href="#about" class="scroll-button border">
@@ -31,12 +40,59 @@
   }
 
   #hero {
+    position: relative;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 0.25rem;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  .hero-border {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .hero-left,
+  .hero-right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+
+  .hero-left {
+    left: 0.5rem;
+  }
+
+  .hero-right {
+    right: 0.5rem;
+  }
+
+  .hero-left img,
+  .hero-right img {
+    height: 100%;
+    width: auto;
+    display: block;
+    z-index: 1;
+  }
+
+  .hero-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 25vh;
+    overflow: hidden;
+    z-index: 2;
+
+    background-image: url("/artwork/border-top.png");
+    background-size: auto 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
   }
 
   .scroll-button {
