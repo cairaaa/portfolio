@@ -1,6 +1,7 @@
 ---
 import "@/assets/styles.scss";
-import ScrollBackground from "../components/ui/ScrollBackground.astro";
+import ScrollBackground from "@/components/ui/ScrollBackground.astro";
+import Footer from "@/components/sections/Footer.astro";
 ---
 
 <!doctype html>
@@ -27,6 +28,7 @@ import ScrollBackground from "../components/ui/ScrollBackground.astro";
 			<main>
 					<slot />
 			</main>
+			<Footer />
 		</ScrollBackground>
 		<script>
 			import "../scripts/animation.ts";
