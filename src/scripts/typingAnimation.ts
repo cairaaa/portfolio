@@ -2,10 +2,10 @@ import Typed from "typed.js";
 
 new Typed("#typed-roles", {
   strings: [
-    "full stack developer",
-    "app creator",
-    "TypeScript enthusiast",
-    "problem solver"
+    "a full stack developer",
+    "an app creator",
+    "a TypeScript enthusiast",
+    "a problem solver"
   ],
   typeSpeed: 50,
   backSpeed: 30,
